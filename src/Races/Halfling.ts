@@ -1,17 +1,20 @@
 import Race from './Race';
-
-export default class Halfling extends Race { // Dwarf herda alguns "comportamentos" d Race
-  public maxLifePoints: number; // Pontos maximos de vida
+// https://www.youtube.com/watch?v=ld4QMSgfAXc
+export default class Dwarf extends Race { // Dwarf herda alguns "comportamentos" d Race
+  public _maxLifePoints = 60; // Pontos maximos de vida
   public static numberOfInstances = 0; // Numero de instancias( iniciei com zero)
 
   constructor(name: string, dexterity: number) {
     super(name, dexterity); // argumentos herdados da class pai Race
 
-    this.maxLifePoints = 60; // Defini o numero maximo de vidas em 80 points
-    Halfling.numberOfInstances += 1; // incrementa a cada vez que uma instancia for criada
+    Dwarf.numberOfInstances += 1; // incrementa a cada vez que uma instancia for criada
+  }
+
+  get maxLifePoints(): number { // Usando o metodo herdado de Race que tem o valor maxLife
+    return this._maxLifePoints;
   }
 
   static createdRacesInstances() { // responsavel por mostrar o numero atual de instancias
     return this.numberOfInstances;
   }
-}
+} // Implementar o maxLifePoints() : number { return this.maxLifePoints}
