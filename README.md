@@ -30,7 +30,7 @@ Para instalar o Trybers and Dragons, siga estas etapas:
 </br>
 <details>
   <summary><strong>🐋 Rodando no Docker ou Localmente</strong></summary><br />
-  ## Com Docker
+    Com Docker
 
   > Rode o serviço `node` com o comando `docker-compose up -d`.
   - Esse serviço irá inicializar um container chamado `trybers_and_dragons`.
